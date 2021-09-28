@@ -157,6 +157,8 @@ public class MainBiblioteca {
 						int cantidadPaginas = lector.nextInt();
 						System.out.println("Ingrese el precio");
 						int precio = lector.nextInt();
+						System.out.println("Ingrese el nombreCantidad");
+						String nombreCantidad = teclado.nextLine();
 
 						System.out.println(" Elija que tipo de libro es");
 						System.out.println("1. Libro de trabajo\n" + "2. Libro lectura");
@@ -182,20 +184,21 @@ public class MainBiblioteca {
 						nuevoLibro.setCantidadPaginas(cantidadPaginas);
 						nuevoLibro.setPrecio(precio);
 						nuevoLibro.setDiasEspera(diaHoy);
+						nuevoLibro.setReserva(reservarLibro);
+						nuevoLibro.setNombreCantidad(nombreCantidad.toUpperCase());
 
 						listaLibros[i] = nuevoLibro;
 
 					}
-//impresion del arrreglo
-					for (i = 0; i < listaLibros.length; i++) {
-						System.out.println(listaLibros[i]);
-					}
+
+				
+					
 
 					break;
 				case 2:
 					// prestar un lirbo
 					System.out.println("Por favor ingrese el código del libro");
-					int codigoL = lector.nextInt();
+					codigoLibroWrappers = lector.nextInt();
 					for (i = 0; i < listaLibros.length; i++) {
 						Libros libroBuscar = listaLibros[i];
 						resultados = codigoLibroWrappers.equals(libroBuscar.getCodigo());
